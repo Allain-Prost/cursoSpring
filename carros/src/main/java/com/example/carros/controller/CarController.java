@@ -5,6 +5,7 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -35,6 +36,11 @@ public class CarController {
 	@PostMapping("/new")
 	public ResponseEntity<Car> retrieveOneCar(@RequestBody Car car){
 		return carService.createCar(car);
+	}
+	
+	@DeleteMapping(value = "/{carId}")
+	public void deleteCar(@PathVariable long carId) {
+		carService.deleteCar(carId);
 	}
 
 }

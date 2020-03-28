@@ -30,4 +30,8 @@ public class CarService {
 		return carRepository.findAll();
 	}
 
+	public void deleteCar(long carId) {
+		carRepository.deleteById(carId);
+	}
+
 }

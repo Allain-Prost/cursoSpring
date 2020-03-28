@@ -10,7 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "Car")
+@Table(name = "car")
 public class Car {
 	
 	@Id
@@ -28,6 +28,18 @@ public class Car {
 	
 	@Column(name = "CHASSI")
 	private String chassi;
+	
+	public Car () {
+		
+	}
+	
+	public Car(long id, String nomeDoModelo, String marca, String anaFabricacao, String chassi) {
+		this.id = id;
+		this.nomeDoModelo = nomeDoModelo;
+		this.marca = marca;
+		this.anoFabricacao = anoFabricacao;
+		this.chassi = chassi;
+	}
 
 	public Long getId() {
 		return id;
